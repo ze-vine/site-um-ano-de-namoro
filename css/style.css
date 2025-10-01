@@ -11,25 +11,6 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.tabulacao {
-  display: inline-block;
-  margin-left: 3em;
-}
-
-#secao-um {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  padding-top: 20px;
-}
-
-#texto-introdutorio {
-  width: 50%;
-  font-size: 20px;
-  text-align: justify;
-  margin: auto;
-}
-
 #titulo-site {
   font-family: "Pacifico", cursive;
   font-size: 40px;
@@ -38,12 +19,59 @@ body {
   text-align: center;
 }
 
-#galeriaFotos {
+#container {
     margin: 0 auto;
     background-color: white;
     border-radius: 20px;
     width: 1000px;
     height: auto;
+}
+
+#texto-da-secao-03 {
+  align-self: baseline;
+}
+
+#imagem-da-secao-03 {
+  padding-right: 30px;
+}
+
+#imagem-da-secao-03 img {
+  border-radius: 20px;
+}
+
+.secao {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  width: 950px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+.titulo-da-secao {
+  font-size: 40px;
+  text-align: center;
+  padding-bottom: 20px;
+  color: rgb(119, 7, 7);
+}
+
+.texto-da-secao {
+  width: 60%;
+  text-align: justify;
+  align-self: baseline;
+}
+
+.imagem-da-secao {
+  width: 40%;
+}
+
+.imagem-da-secao img {
+  border-radius: 20px;
+}
+
+.tabulacao {
+  display: inline-block;
+  margin-left: 3em;
 }
 
 .titulos {
@@ -53,6 +81,7 @@ body {
 .slideshow {
   position: relative;
   width: 40%;
+  margin-right: 30px;
   overflow: hidden;
   height: 400px;
 }

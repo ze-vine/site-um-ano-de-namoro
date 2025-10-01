@@ -75,12 +75,18 @@ function contarDias() {
     textoContador = document.querySelector("#textoContador");
     tempoDecorridoEmMilissegundos = Date.now() - dataDeInicio.getTime();
     diasDeNamoro = retornarParteInteira(tempoDecorridoEmMilissegundos / (1000 * 60 * 60 * 24));
+    segundosTotaisDeNamoro = retornarParteInteira(tempoDecorridoEmMilissegundos / 1000);
+    minutosTotaisDeNamoro = retornarParteInteira(segundosTotaisDeNamoro / 60);
+    horasTotaisDeNamoro = retornarParteInteira(minutosTotaisDeNamoro / 60);
     mesesDeNamoro = retornarParteInteira(diasDeNamoro / 30);
     anosDeNamoro = retornarParteInteira(diasDeNamoro / 365);
     contadorDias = 0
     contadorMeses = 0;
 
-    console.log(diasDeNamoro)
+    console.log(segundosTotaisDeNamoro - 60 * minutosTotaisDeNamoro);
+    console.log(minutosTotaisDeNamoro - 60 * horasTotaisDeNamoro);
+    
+    
     
     if (diasDeNamoro < 30) {
         contadorDias = diasDeNamoro;
@@ -98,7 +104,8 @@ function contarDias() {
         contadorMeses = mesesDeNamoro - (12 * anosDeNamoro);
     }
 
-    textoContador.textContent = `${anosDeNamoro} anos ${contadorMeses} meses ${contadorDias} dias`;
+    textoContador.textContent = `${anosDeNamoro} anos ${contadorMeses} meses ${contadorDias} dias
+    horas ${segundosTotaisDeNamoro} segundos`;
 }
 
 function retornarParteInteira(numero) {
