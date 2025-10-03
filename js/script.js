@@ -111,3 +111,45 @@ function contarDias() {
 function retornarParteInteira(numero) {
     return Math.trunc(numero);
 }
+
+const audio = document.getElementById('audio');
+const playBtn = document.getElementById('play');
+const progressContainer = document.getElementById('progress-container');
+const progress = document.getElementById('progress');
+const heart = document.getElementById('heart');
+
+// Play / Pause
+playBtn.addEventListener('click', () => {
+    if (audio.paused) {
+    audio.play();
+    playBtn.textContent = '⏸';
+    } else {
+    audio.pause();
+    playBtn.textContent = '▶';
+    }
+});
+
+// Atualizar barra de progresso
+audio.addEventListener('timeupdate', () => {
+    const percent = (audio.currentTime / audio.duration) * 100;
+    progress.style.width = percent + '%';
+});
+
+// Clicar na barra para mudar tempo
+progressContainer.addEventListener('click', (e) => {
+    const width = progressContainer.clientWidth;
+    const clickX = e.offsetX;
+    const duration = audio.duration;
+    audio.currentTime = (clickX / width) * duration;
+});
+
+// Coração (curtir)
+heart.addEventListener('click', () => {
+    if (heart.textContent === '♡') {
+    heart.textContent = '❤';
+    heart.style.color = 'red';
+    } else {
+    heart.textContent = '♡';
+    heart.style.color = 'black';
+    }
+});
