@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
 * {
   padding: 0;
@@ -8,7 +8,9 @@
 
 body {
     background-color: rgb(119, 7, 7);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Varela Round", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 #titulo-site {
@@ -46,7 +48,7 @@ body {
   align-items: center;
   width: 950px;
   margin: 0 auto;
-  padding-top: 40px;
+  padding-top: 20px;
 }
 
 .titulo-da-secao {
@@ -166,7 +168,7 @@ body {
   width: 300px;
   text-align: center;
   margin: 0 auto;
-  padding: 20px;
+  padding-top: 20px;
 }
 
 .cover {
@@ -178,6 +180,7 @@ body {
 }
 
 .cover img {
+  width: 300px;
   border: 3px solid black;
   border-radius: 10px;
 }
@@ -234,4 +237,44 @@ body {
   border: none;
   font-size: 20px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 760px) {
+  .secao {
+    width: 100%;
+    display: block;
+  }
+  #container {
+    margin: 0 auto;
+    position: relative;
+    background-color: white;
+    border-radius: 20px;
+    width: 320px;
+    height: auto;
+  }
+  #titulo-site {
+    font-size: 28px;
+  }
+  .texto-da-secao {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .slideshow {
+    width: 100%;
+    margin: 0;
+  }
+  .imagem-da-secao {
+    width: 100%;
+    padding-top: 20px;
+  }
+  #imagem-da-secao-03 {
+    padding: 0;
+  }
+
+  #imagem-da-secao-03 img {
+    width: 90%;
+  }
+  .imagem-da-secao img {
+    border: 1px solid black;
+  }
 }
