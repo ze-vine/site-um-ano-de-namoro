@@ -1,6 +1,8 @@
 var slideshows = document.querySelectorAll('[data-component="slideshow"]');
 slideshows.forEach(initSlideShow);
 
+contarDias()
+
 function initSlideShow(slideshow) {
 const slides = slideshow.querySelectorAll('.slide');
 const indicatorsContainer = slideshow.querySelector('.indicators');
@@ -57,4 +59,48 @@ startAutoSlide();
 }
 
 startAutoSlide();
+}
+
+function contarDias() {
+    const dataDeInicio = new Date(2024, 9, 12);
+
+    let textoContador;
+    let tempoDecorridoEmMilissegundos;
+    let diasDeNamoro;
+    let mesesDeNamoro;
+    let anosDeNamoro;
+    let contadorDias;
+    let contadorMeses;
+
+    textoContador = document.querySelector("#textoContador");
+    tempoDecorridoEmMilissegundos = Date.now() - dataDeInicio.getTime();
+    diasDeNamoro = retornarParteInteira(tempoDecorridoEmMilissegundos / (1000 * 60 * 60 * 24));
+    mesesDeNamoro = retornarParteInteira(diasDeNamoro / 30);
+    anosDeNamoro = retornarParteInteira(diasDeNamoro / 365);
+    contadorDias = 0
+    contadorMeses = 0;
+
+    console.log(diasDeNamoro)
+    
+    if (diasDeNamoro < 30) {
+        contadorDias = diasDeNamoro;
+    } else if (diasDeNamoro % 30 == 0) {
+        contadorDias = 0;
+    } else {
+        contadorDias = diasDeNamoro - (30 * mesesDeNamoro) - 5;
+    }
+
+    if (mesesDeNamoro < 12) {
+        contadorMeses = mesesDeNamoro;
+    } else if (mesesDeNamoro % 12 == 0) {
+        contadorMeses = 0;
+    } else {    
+        contadorMeses = mesesDeNamoro - (12 * anosDeNamoro);
+    }
+
+    textoContador.textContent = `${anosDeNamoro} anos ${contadorMeses} meses ${contadorDias} dias`;
+}
+
+function retornarParteInteira(numero) {
+    return Math.trunc(numero);
 }
